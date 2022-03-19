@@ -1,7 +1,7 @@
 <?php
 ob_start();
 
-define('API_KEY','5124165692:AAFwMG3uc9EIODty3Y8aaEpxPv0JYVBiDnM');
+define('API_KEY','5123335491:AAGzreuY9d1bAClQOGBHIu7sGxTYYgzemAU');
 //-----------function
 function MrPHPBot($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
