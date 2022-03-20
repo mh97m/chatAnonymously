@@ -159,7 +159,7 @@ MrPHPBot('sendmessage',[
           elseif ($step == 'payam') {
           $payam = "$textmassage + $username";
           $mo = file_get_contents("data/$from_id/text.txt");
-          SendMessage($mo,$payam);
+          SendMessage($mo,"$payam");
           SendMessage($chat_id,"پیغام شما با موفقیت ارسال شد.");
       }
 elseif($textmassage=="راهنما ⁉️"){
