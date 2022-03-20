@@ -1,8 +1,17 @@
+
 <?php
 ob_start();
-
+/*
+─═ঊঈঊঈ═─╮
+Developer : mohammadhosseinheidari
+Dev ID : @NOBLEST
+Channel ID : @harfnashenasbeman
+Github Addres : github.com/NobLestDev/harfnashenasbeman
+─═ঊঈঊঈ═─╯
+*/
 define('API_KEY','5237938402:AAHfKblMIjClRDlOEd5clYkpZDQccaaQe4E');
-//-----------function
+//-----------------------------------------------------------------------------------------
+//فانکشن MrPHPBot :
 function MrPHPBot($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
     $ch = curl_init();
@@ -16,7 +25,8 @@ function MrPHPBot($method,$datas=[]){
         return json_decode($res);
     }
 }
-//--------------Varibles
+//-----------------------------------------------------------------------------------------
+//متغیر ها :
 $update = json_decode(file_get_contents('php://input'));
 $message = $update->message;
 $from_id = $message->from->id;
@@ -36,7 +46,8 @@ $chatha = file_get_contents("data/chatlist.txt");
 $chat = file_get_contents("data/chat.txt");
 $banlist = file_get_contents("data/banlist.txt");
 $member = file_get_contents("data/member.txt");
-//--------------- Functions
+//-----------------------------------------------------------------------------------------
+//فانکشن ها : 
 function SendMessage($chat_id, $text){
 MrPHPBot('sendMessage',[
 'chat_id'=>$chat_id,
@@ -90,7 +101,7 @@ elseif (strpos($create , "$from_id") !== false  ) {
   save("data/$from_id/file.txt","none");
 	MrPHPBot('sendmessage',[
 	'chat_id'=>$chat_id,
-	'text'=>"برگشتیم",
+	'text'=>"برگشتیم :",
   'parse_mode'=>'MarkDown',
 	'reply_markup'=>json_encode([
 	'resize_keyboard'=>true,
@@ -114,7 +125,7 @@ SendMessage($chat_id,"متن پایین رو به دوستانتون و گروه
 روی لینک زیر کلیک کن و هر انتقادی که نسبت به من داری یا اعتراف و حرفی که تو دلت هست رو با خیال راحت بنویس و بفرست. بدون اینکه از اسمت باخبر بشم متنت به من می‌رسه. خودتم می‌تونی امتحان کنی و از همه بخوای راحت و ناشناس بهت پیام بفرستن، حرفای خیلی جالبی می‌شنوی.
 
 👇👇👇👇👇
-https://telegram.me/chatToMeAnonymously_bot?start=$username\n➖➖➖\nنکته اگر لینک شما کامل نشد باید برای تلگرام خود یوزرنیم انتخاب کنید.",
+https://telegram.me/harfnashenasbemanbot?start=$username\n➖➖➖\nنکته اگر لینک شما کامل نشد باید برای تلگرام خود یوزرنیم انتخاب کنید.",
   'parse_mode'=>'MarkDown',
 	'reply_markup'=>json_encode([
 	'resize_keyboard'=>true,
@@ -175,7 +186,8 @@ elseif($textmassage=="راهنما ⁉️"){
 برنامه حرف به من هیچ مسولیتی در قبال رد وبدل شدن پیام ها ندارد
 ولی ما درصورت مشاهده شکایت یک فرد ازیک پیام تمام اطلاعات را در اختیارمراجعه قانونی میگزاریم.
 هرکس که در ربات برخلاف قوانین عمل کنند
-برای همیشه از برنامه مسدود میشود.",
+برای همیشه از برنامه مسدود میشود.
+باتشکرازشما تیم مدیریتی برنامه حرف به من\nاین سورس توسط محمدحسین حیدری نوشته شده است\nارتباط با برنامه نویس:\n@NOBLEST\n@NOBLESTBOT",
   'parse_mode'=>'MarkDown',
 	'reply_markup'=>json_encode([
 	'resize_keyboard'=>true,
@@ -190,7 +202,7 @@ elseif($textmassage=="راهنما ⁉️"){
   sendAction($chat_id, 'typing');
 	MrPHPBot('sendmessage',[
 	'chat_id'=>$chat_id,
-	'text'=>"یک دکمه رو انتخاب کن",
+	'text'=>"یک دکمه رو انتخاب کن :",
   'parse_mode'=>'MarkDown',
 	'reply_markup'=>json_encode([
 	'resize_keyboard'=>true,
@@ -269,45 +281,6 @@ $mem = fopen( "data/users.txt", 'r');
     while( !feof( $mem)) {
     $memuser = fgets( $mem);
 save("data/$from_id/file.txt","to");
-     MrPHPBot('sendmessage',[
-          'chat_id'=>$memuser,
-          'text'=>$textmassage,
-    'parse_mode'=>'MarkDown'
-        ]);
-    }
-} elseif ($textmassage == 'فروارد همگانی' && $from_id == $Dev) {
-save("data/$from_id/file.txt","fortoall");
-         MrPHPBot('sendmessage',[
-        	'chat_id'=>$Dev,
-        	'text'=>"لطفا متن خود را بفرستید :",
-		'parse_mode'=>'MarkDown',
-    		]);
-}elseif ($step == 'fortoall') {
-$mem = fopen( "data/users.txt", 'r');
-    while( !feof( $mem)) {
-    $memuser = fgets( $mem);
-save("data/$from_id/file.txt","none");
-Forward($memuser, $chat_id,$message_id);
-    }
-}        
-?>
->
-f ($step == 'fortoall') {
-$mem = fopen( "data/users.txt", 'r');
-    while( !feof( $mem)) {
-    $memuser = fgets( $mem);
-save("data/$from_id/file.txt","none");
-Forward($memuser, $chat_id,$message_id);
-    }
-}        
-?>
->
-from_id/file.txt","none");
-Forward($memuser, $chat_id,$message_id);
-    }
-}        
-?>
-/file.txt","to");
      MrPHPBot('sendmessage',[
           'chat_id'=>$memuser,
           'text'=>$textmassage,
