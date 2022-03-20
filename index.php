@@ -1,16 +1,7 @@
 <?php
 ob_start();
-/*
-─═ঊঈঊঈ═─╮
-Developer : mohammadhosseinheidari
-Dev ID : @NOBLEST
-Channel ID : @harfnashenasbeman
-Github Addres : github.com/NobLestDev/harfnashenasbeman
-─═ঊঈঊঈ═─╯
-*/
 define('API_KEY','5274522811:AAHLDlEy7xcVwjFGfYOllKHu7h2Vx3SPLbg');
-//-----------------------------------------------------------------------------------------
-//فانکشن MrPHPBot :
+//--------------------------------------------------------------------------------------
 function MrPHPBot($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
     $ch = curl_init();
@@ -24,8 +15,7 @@ function MrPHPBot($method,$datas=[]){
         return json_decode($res);
     }
 }
-//-----------------------------------------------------------------------------------------
-//متغیر ها :
+//--------------------------------------------------------------------------------------
 $update = json_decode(file_get_contents('php://input'));
 $message = $update->message;
 $from_id = $message->from->id;
@@ -46,7 +36,6 @@ $chat = file_get_contents("data/chat.txt");
 $banlist = file_get_contents("data/banlist.txt");
 $member = file_get_contents("data/member.txt");
 //-----------------------------------------------------------------------------------------
-//فانکشن ها : 
 function SendMessage($chat_id, $text){
 MrPHPBot('sendMessage',[
 'chat_id'=>$chat_id,
@@ -185,8 +174,7 @@ elseif($textmassage=="راهنما ⁉️"){
 برنامه حرف به من هیچ مسولیتی در قبال رد وبدل شدن پیام ها ندارد
 ولی ما درصورت مشاهده شکایت یک فرد ازیک پیام تمام اطلاعات را در اختیارمراجعه قانونی میگزاریم.
 هرکس که در ربات برخلاف قوانین عمل کنند
-برای همیشه از برنامه مسدود میشود.
-باتشکرازشما تیم مدیریتی برنامه حرف به من\nاین سورس توسط محمدحسین حیدری نوشته شده است\nارتباط با برنامه نویس:\n@NOBLEST\n@NOBLESTBOT",
+برای همیشه از برنامه مسدود میشود.",
   'parse_mode'=>'MarkDown',
 	'reply_markup'=>json_encode([
 	'resize_keyboard'=>true,
